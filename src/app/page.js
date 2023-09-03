@@ -1,10 +1,9 @@
-import Image from 'next/image'
-
 export default function Home() {
   return (
     <main className="flex min-h-screen items-center justify-between">
-      <div className="bg-[url('../../public/images/signupimg.png')]  bg-center h-screen w-6/12"></div>
-      <div className='bg-white h-screen w-7/12'>
+      {/* Background Image for Desktop */}
+      <div className="hidden md:block bg-[url('../../public/images/signupimg.png')] bg-center h-screen w-6/12"></div>
+      <div className='bg-white h-screen w-full md:w-7/12'>
         <div className='flex flex-col items-center justify-center h-screen'>
           <div className='w-9/12'>
             <p className='text-right'>Already have an account? <span className='text-[#00359A]'>Login Here</span></p>
@@ -29,3 +28,4 @@ export default function Home() {
     </main>
   )
 }
+
