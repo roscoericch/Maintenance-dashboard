@@ -128,7 +128,7 @@ const Index = () => {
                     <table className="border-collapse border text-center w-full">
                         <thead>
                           <tr>
-                            <th className="">Agency's Name</th>
+                            <th className="">Agencys Name</th>
                             <th>Email Address</th>
                             <th>Date</th>
                             <th>Contact</th>

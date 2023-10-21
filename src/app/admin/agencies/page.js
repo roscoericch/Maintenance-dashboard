@@ -14,7 +14,7 @@ const AdminAgencies = () => {
             <section className="flex flex-col space-y-6 py-6 px-6">
                 <section className="flex justify-between space-x-4 border-b border-grey p-2">
                   <div className="flex flex-col space-y-2">
-                      <h1 className="text-[#1F1F1F] text-2xl font-bold" >Agency's Details</h1>
+                      <h1 className="text-[#1F1F1F] text-2xl font-bold" >Agencys Details</h1>
                       <p className="text-[#828282] text-lg  ">You get to know more details about the agency here.</p>
                   </div>
                 </section>
