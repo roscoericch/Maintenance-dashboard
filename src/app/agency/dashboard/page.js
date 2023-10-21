@@ -1,11 +1,11 @@
-import AdminLayout from "../../../../components/AdminLayout";
+import AgencyLayout from "../../../../components/AgencyLayout";
 import React from 'react'
 import Image from "next/image"
 
 const Index = () => {
   return (
     <>
-        <AdminLayout>
+        <AgencyLayout>
             <section className="flex justify-between bg-white p-8 px-6 shadow-md">
                 <h1 className="text-[#00359A] text-3xl font-bold">Overview</h1>
                 <div>
@@ -27,7 +27,7 @@ const Index = () => {
                 <section className="flex flex-col md:flex-row gap-8">
                     <div className="flex justify-between bg-[#002C81] rounded-3xl p-10 shadow-md">
                         <div className="flex flex-col space-y-2 text-white"> 
-                            <h2>Total No. of Registered <br /> Agencies</h2>
+                            <h2>Total No. of Registered <br /> Workers</h2>
                             <h1 className="text-2xl font-bold">1.1k</h1>
                             <div className="flex space-x-2">
                               <div className="cardCircleIcon w-6 bg-[#B5FFCE] text-black text-center">
@@ -51,7 +51,32 @@ const Index = () => {
                     </div>
                     <div className="flex justify-between bg-[#002160]  rounded-3xl p-10 shadow-md">
                         <div className="flex flex-col space-y-2 text-white"> 
-                            <h2>Total No. of Sub <br /> Admin</h2>
+                          <h2>Total Payments <br /> Made</h2>
+                            <h1 className="text-2xl font-bold">25k</h1>
+                            <div className="flex space-x-2">
+                              <div className="cardCircleIcon w-6 bg-[#B5FFCE] text-black text-center">
+                                p{/* arrow icon will be here */}
+                              </div>
+                              <h3 className="text-[#77E7A6] mt-1">+10 %</h3>
+                            </div>
+                            
+                        </div>
+                        <div className="flex flex-col justify-between">
+                          <div className="ml-16 mt-4">
+                            <Image
+                                src="/images/Group 3038.png"
+                                alt="profile picture"
+                                width={20}
+                                height={20}
+                              />
+                          </div>
+                          <small className="underline text-white">View Report</small>
+                        </div>
+                    </div>
+
+                    <div className="flex justify-between bg-[#002160]  rounded-3xl p-10 shadow-md">
+                        <div className="flex flex-col space-y-2 text-white"> 
+                            <h2>Number of Submitted <br /> Timesheet</h2>
                             <h1 className="text-2xl font-bold">25k</h1>
                             <div className="flex space-x-2">
                               <div className="cardCircleIcon w-6 bg-[#B5FFCE] text-black text-center">
@@ -74,6 +99,26 @@ const Index = () => {
                         </div>
                     </div>
                 </section>
+
+
+                <section className="flex justify-between gap-12">
+                    <div className='card w-1/5 h-1/2'>
+                        <div className="flex flex-col items-center p-4">
+                            
+                        </div>
+                    </div>
+                    <div className='card w-4/5 h-1/2'>
+                        <div className="flex flex-col  p-4">
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </section>
+
+
+
+
                 {/* Table Section */}
                 <section className="flex flex-col card">
                    <div className="">
@@ -105,7 +150,7 @@ const Index = () => {
                    </div>
                 </section>
             </section>
-        </AdminLayout>
+        </AgencyLayout>
     </>
   )
 }
