@@ -87,7 +87,7 @@ Neque leo aliq uam tempor et lacus, aliquam mam. At augue egestas risus amet tur
                         <table className="border-collapse border text-center w-full">
                             <thead>
                             <tr>
-                                <th className="">Agency's Name</th>
+                                <th className="">Agencys Name</th>
                                 <th>Email Address</th>
                                 <th>Date</th>
                                 <th>Contact</th>
