@@ -1,5 +1,5 @@
 "use client";
-import { Tabs, ConfigProvider, Input, Button } from "antd";
+import { Tabs, ConfigProvider, Input, Button, Switch } from "antd";
 // import { Poppins } from "next/font/google";
 
 // const poppins = Poppins({
@@ -45,5 +45,11 @@ export const CustomButton = ({ ...props }) => (
     theme={{ token: { ...primaryConfig, colorPrimary: "#00AEFF" } }}
   >
     <Button {...props} />
+  </ConfigProvider>
+);
+
+export const CustomSwitch = ({ ...props }) => (
+  <ConfigProvider theme={{ token: { ...primaryConfig } }}>
+    <Switch {...props} />
   </ConfigProvider>
 );

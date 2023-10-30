@@ -1,6 +1,7 @@
 import WorkersLayout from "../../../../components/WorkersLayout";
 import Image from "next/image";
 import profile_img from "../../../../assets/profile_img.jpg";
+import Camera from "../../../../components/icon/Camera";
 import {
   CustomTab as Tab,
   CustomInput as Input,
@@ -108,20 +109,25 @@ const page = () => {
       ),
       children: (
         <div className="px-[3%] flex flex-col gap-[2rem] p-[2%] w-[90%] h-[80vh] justify-between bg-white">
-          <div className="flex flex-col gap-[0.5rem]">
+          <div className="flex flex-col gap-[1rem]">
             <span className="p-[0.2rem] w-fit border-b border-[#00359A]">
               <p className="text-[16px] font-[600] text-[#00359A]">
                 Edit Profile
               </p>
             </span>
-            <Image
-              src={profile_img}
-              alt=""
-              className="w-[159px] h-[154px] rounded-full p-[3%] self-center justify-self-center"
-            />
-            <Input value={"Adelakin Adelakin"} />
-            <Input value="Male" />
-            <Input placeHolder="Enter Contact" />
+            <span className="relative mx-auto">
+              <Image
+                src={profile_img}
+                width={159}
+                height={154}
+                alt=""
+                className="w-[159px] h-[154px] rounded-full p-[3%] self-center justify-self-center"
+              />
+              <Camera className="absolute right-0 bottom-0" />
+            </span>
+            <Input className="!py-[1%]" value={"Adelakin Adelakin"} />
+            <Input className="!py-[1%]" value="Male" />
+            <Input className="!py-[1%]" placeHolder="Enter Contact" />
             <TextArea placeHolder="About Me" />
           </div>
           <Button

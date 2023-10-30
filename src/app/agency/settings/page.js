@@ -7,15 +7,67 @@ import {
   CustomPasswordInput as PasswordInput,
   CustomButton as Button,
   TextArea,
+  CustomSwitch as Switch,
 } from "../../../../components/lib/antdComponent";
+import Bell from "../../../../components/icon/Bell";
 import Lock from "../../../../components/icon/Lock";
 import Mail from "../../../../components/icon/Mail";
 import Profile from "../../../../components/icon/Profile";
+import Camera from "../../../../components/icon/Camera";
 
 const page = () => {
   const items = [
     {
       key: "1",
+      label: (
+        <span className="flex items-center gap-[1rem]">
+          <Bell className="fill-inherit" />
+          <p>Notification</p>
+        </span>
+      ),
+      children: (
+        <div className="px-[3%] flex flex-col gap-[2rem] p-[2%] w-[90%] h-[80vh] justify-between bg-white">
+          <div className="flex flex-col gap-[0.5rem]">
+            <span className="p-[0.2rem] w-fit border-b border-[#00359A]">
+              <p className="text-[16px] font-[600] text-[#00359A]">
+                Notification
+              </p>
+            </span>
+            <span className="flex justify-between items-center">
+              <span className="inlineblock">
+                <p className="text-[#1F1F1F] text-[16px] font-[600]">
+                  Notify me when a new worker joins:
+                </p>
+                <p className="text-[#4F4F4F] text-[16px] font-[600]">
+                  Get notifications when a new worker sign up and joins.
+                </p>
+              </span>
+              <Switch />
+            </span>
+            <span className="flex justify-between items-center">
+              <span className="inlineblock">
+                <p className="text-[#1F1F1F] text-[16px] font-[600]">
+                  Notify me when a worker submit timesheet:
+                </p>
+                <p className="text-[#4F4F4F] text-[16px] font-[600]">
+                  Get notifications when a worker submit a timesheet.
+                </p>
+              </span>
+              <Switch />
+            </span>
+          </div>
+          <Button
+            type="primary"
+            htmlType="submit"
+            className="!bg-[#00AEFF] self-end justify-self-end place-self-end"
+          >
+            Save Changes
+          </Button>
+        </div>
+      ),
+    },
+    {
+      key: "2",
       label: (
         <span className="flex items-center gap-[1rem]">
           <Lock className="fill-inherit" />
@@ -60,7 +112,7 @@ const page = () => {
       ),
     },
     {
-      key: "2",
+      key: "3",
       label: (
         <span className="flex items-center gap-[1rem]">
           <Mail className="fill-inherit" />
@@ -99,7 +151,7 @@ const page = () => {
       ),
     },
     {
-      key: "3",
+      key: "4",
       label: (
         <span className="flex items-center gap-[1rem]">
           <Profile className="fill-inherit" />
@@ -108,20 +160,25 @@ const page = () => {
       ),
       children: (
         <div className="px-[3%] flex flex-col gap-[2rem] p-[2%] w-[90%] h-[80vh] justify-between bg-white">
-          <div className="flex flex-col gap-[0.5rem]">
+          <div className="flex flex-col gap-[1rem]">
             <span className="p-[0.2rem] w-fit border-b border-[#00359A]">
               <p className="text-[16px] font-[600] text-[#00359A]">
                 Edit Profile
               </p>
             </span>
-            <Image
-              src={profile_img}
-              alt=""
-              className="w-[159px] h-[154px] rounded-full p-[3%] self-center justify-self-center"
-            />
-            <Input value={"Adelakin Adelakin"} />
-            <Input value="Male" />
-            <Input placeHolder="Enter Contact" />
+            <span className="relative mx-auto">
+              <Image
+                src={"/images/Mask Group.png"}
+                width={159}
+                height={154}
+                alt=""
+                className="w-[159px] h-[154px] rounded-full p-[3%] self-center justify-self-center"
+              />
+              <Camera className="absolute right-0 bottom-0" />
+            </span>
+            <Input className="!py-[1%]" value={"Adelakin Adelakin"} />
+            <Input className="!py-[1%]" value="Male" />
+            <Input className="!py-[1%]" placeHolder="Enter Contact" />
             <TextArea placeHolder="About Me" />
           </div>
           <Button
@@ -142,15 +199,19 @@ const page = () => {
           <h2 className="text-[#00359A] text-[32px] font-[600]">Settings</h2>
           <span className="flex items-center gap-[1rem]">
             <Image
-              src={profile_img}
+              src={"/images/Mask Group.png"}
               alt=""
+              width={40}
+              height={40}
               className="w-[40px] h-[40px] rounded-full"
             />
             <span className="flex flex-col gap-[0.1rem]">
               <p className="text-[#1F1F1F] text-[16px] font-[600]">
-                Adelakin Adelakin
+                Volkswagen Coorp
               </p>
-              <p className="text-[#828282] text-[14px] font-[400]">User</p>
+              <p className="text-[#828282] text-[14px] font-[400]">
+                Administrator
+              </p>
             </span>
           </span>
         </nav>
