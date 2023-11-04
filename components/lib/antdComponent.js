@@ -1,5 +1,15 @@
 "use client";
-import { Tabs, ConfigProvider, Input, Button, Switch } from "antd";
+import {
+  Tabs,
+  ConfigProvider,
+  Input,
+  Button,
+  Switch,
+  DatePicker,
+  TimePicker,
+  Select,
+  InputNumber,
+} from "antd";
 // import { Poppins } from "next/font/google";
 
 // const poppins = Poppins({
@@ -28,6 +38,12 @@ export const CustomInput = ({ ...props }) => (
   </ConfigProvider>
 );
 
+export const CustomInputNumber = ({ ...props }) => (
+  <ConfigProvider theme={{ token: { ...primaryConfig } }}>
+    <InputNumber {...props} />
+  </ConfigProvider>
+);
+
 export const TextArea = ({ ...props }) => (
   <ConfigProvider theme={{ token: { ...primaryConfig } }}>
     <Input.TextArea {...props} />
@@ -51,5 +67,23 @@ export const CustomButton = ({ ...props }) => (
 export const CustomSwitch = ({ ...props }) => (
   <ConfigProvider theme={{ token: { ...primaryConfig } }}>
     <Switch {...props} />
+  </ConfigProvider>
+);
+
+export const CustomDatePicker = ({ ...props }) => (
+  <ConfigProvider theme={{ token: { ...primaryConfig } }}>
+    <DatePicker {...props} />
+  </ConfigProvider>
+);
+
+export const CustomTimePicker = ({ ...props }) => (
+  <ConfigProvider theme={{ token: { ...primaryConfig } }}>
+    <TimePicker {...props} />
+  </ConfigProvider>
+);
+
+export const CustomSelect = ({ ...props }) => (
+  <ConfigProvider theme={{ token: { ...primaryConfig } }}>
+    <Select {...props} />
   </ConfigProvider>
 );

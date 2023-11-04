@@ -5,7 +5,7 @@ const WorkersLayout = ({ children }) => {
     <>
       <section className="flex">
         <WorkersSideBar />
-        <main className="w-full">{children}</main>
+        <main className="w-full bg-[#F8F8F8]">{children}</main>
       </section>
     </>
   );
