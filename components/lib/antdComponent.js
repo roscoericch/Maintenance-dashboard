@@ -9,6 +9,7 @@ import {
   TimePicker,
   Select,
   InputNumber,
+  Calendar,
 } from "antd";
 // import { Poppins } from "next/font/google";
 
@@ -85,5 +86,11 @@ export const CustomTimePicker = ({ ...props }) => (
 export const CustomSelect = ({ ...props }) => (
   <ConfigProvider theme={{ token: { ...primaryConfig } }}>
     <Select {...props} />
+  </ConfigProvider>
+);
+
+export const CustomCalendar = ({ ...props }) => (
+  <ConfigProvider theme={{ token: { ...primaryConfig } }}>
+    <Calendar {...props} />
   </ConfigProvider>
 );
