@@ -17,7 +17,7 @@ const Page = () => {
   const [entry, setEntry] = useState([1]);
   return (
     <>
-      <nav className="w-full bg-white py-[1%] px-[2%] flex items-center justify-between sticky top-0">
+      <nav className="w-full bg-white py-[1%] px-[2%] flex items-center justify-between sticky top-0 z-10">
         <span className="flex items-center">
           <label
             htmlFor="my-drawer-2"
@@ -36,7 +36,7 @@ const Page = () => {
             height={40}
             className="w-[40px] h-[40px] rounded-full"
           />
-          <span className="flex flex-col gap-[0.1rem]">
+          <span className="hidden md:flex flex-col gap-[0.1rem]">
             <p className="text-[#1F1F1F] text-[16px] font-[600]">
               Adelakin Adelakin
             </p>
@@ -59,7 +59,7 @@ const Page = () => {
             <label className="text-[#1F1F1F] font-[400] text-[16px]">
               Employee Name
             </label>
-            <span className="grid grid-cols-3 gap-[1rem]">
+            <span className="grid grid-cols-1 md:grid-cols-3 gap-[1rem]">
               <Input placeHolder="First Name" />
               <Input placeHolder="Middle Name" />
               <Input placeHolder="Last Name" />
@@ -71,7 +71,7 @@ const Page = () => {
             </label>
             <Input type="email" placeHolder="Enter Email Address" />
           </span>
-          <span className="grid grid-cols-[40%_58%] gap-[2%]">
+          <span className="grid grid-cols-1 md:grid-cols-[40%_58%] gap-[2%]">
             <span className="flex flex-col gap-[0.2rem]">
               <label className="text-[#1F1F1F] font-[400] text-[16px]">
                 Company Name
@@ -85,7 +85,7 @@ const Page = () => {
               <Input placeHolder="Enter Property Address" />
             </span>
           </span>
-          <span className="grid grid-cols-[58%_40%] gap-[2%]">
+          <span className="grid grid-cols-1 md:grid-cols-[58%_40%] gap-[2%]">
             <span className="flex flex-col gap-[0.2rem]">
               <label className="text-[#1F1F1F] font-[400] text-[16px]">
                 Role
@@ -104,7 +104,7 @@ const Page = () => {
           </span>
 
           <div className="flex flex-col gap-[0.5rem]">
-            <span className="grid grid-cols-7 ">
+            <span className="grid grid-cols-2 md:grid-cols-7">
               <label className="text-center text-[#303030] text-[16px] font-[400]">
                 Start Date
               </label>

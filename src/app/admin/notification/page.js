@@ -1,5 +1,5 @@
 import AdminLayout from "@/components/AdminLayout";
-import Image from "next/image";
+import Hamburger from "@/components/icon/Hamburger";
 
 const AdminNotification = () => {
   return (
