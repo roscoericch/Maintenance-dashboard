@@ -10,6 +10,7 @@ import {
   Select,
   InputNumber,
   Calendar,
+  Table,
 } from "antd";
 // import { Poppins } from "next/font/google";
 
@@ -92,5 +93,11 @@ export const CustomSelect = ({ ...props }) => (
 export const CustomCalendar = ({ ...props }) => (
   <ConfigProvider theme={{ token: { ...primaryConfig } }}>
     <Calendar {...props} />
+  </ConfigProvider>
+);
+
+export const CustomTable = ({ ...props }) => (
+  <ConfigProvider theme={{ token: { ...primaryConfig } }}>
+    <Table {...props} />
   </ConfigProvider>
 );

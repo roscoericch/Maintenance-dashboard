@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import WorkersLayout from "../../../../components/WorkersLayout";
 import Image from "next/image";
-import Close from "../../../../components/icon/Close";
-import Add from "../../../../components/icon/Add";
+import Close from "@/components/icon/Close";
+import Add from "@/components/icon/Add";
+import Hamburger from "@/components/icon/Hamburger";
 import {
   CustomInput as Input,
   CustomDatePicker as DatePicker,
@@ -11,14 +11,23 @@ import {
   CustomSelect as Select,
   CustomInputNumber as InputNumber,
   CustomButton as Button,
-} from "../../../../components/lib/antdComponent";
+} from "@/components/lib/antdComponent";
 
 const Page = () => {
   const [entry, setEntry] = useState([1]);
   return (
-    <WorkersLayout>
-      <nav className="w-full bg-white py-[1%] px-[2%] flex items-center justify-between">
-        <h2 className="text-[#00359A] text-[32px] font-[600]">Timesheet</h2>
+    <>
+      <nav className="w-full bg-white py-[1%] px-[2%] flex items-center justify-between sticky top-0">
+        <span className="flex items-center">
+          <label
+            htmlFor="my-drawer-2"
+            className="flex lg:hidden text-blue-800 px-3"
+          >
+            <Hamburger />
+          </label>
+
+          <h2 className="text-[#00359A] text-[32px] font-[600]">Timesheet</h2>
+        </span>
         <span className="flex items-center gap-[1rem]">
           <Image
             src={"/images/profile_img.jpg"}
@@ -35,7 +44,7 @@ const Page = () => {
           </span>
         </span>
       </nav>
-      <section className="bg-[#F8F8F8] w-[95%] mx-auto flex flex-col gap-[1rem]">
+      <section className="w-[95%] mx-auto flex flex-col gap-[1rem]">
         <span className="border-b border-[#E0E0E0]">
           <h2 className="text-[#1F1F1F] text-[24px] font-[600]">
             Good Morning, Adelakin
@@ -162,7 +171,7 @@ const Page = () => {
           </Button>
         </div>
       </section>
-    </WorkersLayout>
+    </>
   );
 };
 

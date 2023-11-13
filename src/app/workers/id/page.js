@@ -1,9 +1,8 @@
-import WorkersLayout from "../../../../components/WorkersLayout";
 import Image from "next/image";
 
 const page = () => {
   return (
-    <WorkersLayout>
+    <>
       <nav className="w-full bg-white py-[1%] px-[2%] flex items-center justify-between">
         <h2 className="text-[#00359A] text-[32px] font-[600]">My ID</h2>
         <span className="flex items-center gap-[1rem]">
@@ -64,7 +63,7 @@ const page = () => {
           </span>
         </div>
       </section>
-    </WorkersLayout>
+    </>
   );
 };
 

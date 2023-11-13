@@ -1,6 +1,5 @@
-import WorkersLayout from "../../../../components/WorkersLayout";
+import AgencyLayout from "@/components/AgencyLayout";
 import Image from "next/image";
-import profile_img from "../../../../assets/profile_img.jpg";
 import {
   CustomTab as Tab,
   CustomInput as Input,
@@ -8,12 +7,13 @@ import {
   CustomButton as Button,
   TextArea,
   CustomSwitch as Switch,
-} from "../../../../components/lib/antdComponent";
-import Bell from "../../../../components/icon/Bell";
-import Lock from "../../../../components/icon/Lock";
-import Mail from "../../../../components/icon/Mail";
-import Profile from "../../../../components/icon/Profile";
-import Camera from "../../../../components/icon/Camera";
+} from "@/components/lib/antdComponent";
+import Bell from "@/components/icon/Bell";
+import Lock from "@/components/icon/Lock";
+import Mail from "@/components/icon/Mail";
+import Profile from "@/components/icon/Profile";
+import Camera from "@/components/icon/Camera";
+import Hamburger from "@/components/icon/Hamburger";
 
 const page = () => {
   const items = [
@@ -193,34 +193,40 @@ const page = () => {
     },
   ];
   return (
-    <>
-      <WorkersLayout>
-        <nav className="w-full bg-white py-[1%] px-[2%] flex items-center justify-between">
+    <AgencyLayout>
+      <nav className="w-full bg-white py-[1%] px-[2%] flex items-center justify-between sticky top-0">
+        <span className="flex items-center gap-1">
+          <label
+            htmlFor="my-drawer-2"
+            className="flex lg:hidden text-blue-800 px-3"
+          >
+            <Hamburger />
+          </label>
           <h2 className="text-[#00359A] text-[32px] font-[600]">Settings</h2>
-          <span className="flex items-center gap-[1rem]">
-            <Image
-              src={"/images/Mask Group.png"}
-              alt=""
-              width={40}
-              height={40}
-              className="w-[40px] h-[40px] rounded-full"
-            />
-            <span className="flex flex-col gap-[0.1rem]">
-              <p className="text-[#1F1F1F] text-[16px] font-[600]">
-                Volkswagen Coorp
-              </p>
-              <p className="text-[#828282] text-[14px] font-[400]">
-                Administrator
-              </p>
-            </span>
+        </span>
+        <span className="flex items-center gap-[1rem]">
+          <Image
+            src={"/images/Mask Group.png"}
+            alt=""
+            width={40}
+            height={40}
+            className="w-[40px] h-[40px] rounded-full"
+          />
+          <span className="flex flex-col gap-[0.1rem]">
+            <p className="text-[#1F1F1F] text-[16px] font-[600]">
+              Volkswagen Coorp
+            </p>
+            <p className="text-[#828282] text-[14px] font-[400]">
+              Administrator
+            </p>
           </span>
-        </nav>
-        <section className=""></section>
-        <section className="m-auto py-[3%]">
-          <Tab items={items} tabPosition="left" />
-        </section>
-      </WorkersLayout>
-    </>
+        </span>
+      </nav>
+      <section className=""></section>
+      <section className="m-auto py-[3%]">
+        <Tab items={items} tabPosition="left" />
+      </section>
+    </AgencyLayout>
   );
 };
 

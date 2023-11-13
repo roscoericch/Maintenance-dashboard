@@ -1,11 +1,53 @@
-import WorkersLayout from "../../../../components/WorkersLayout";
+"use client";
 import Image from "next/image";
-import ArrowDown from "../../../../components/icon/ArrowDown";
-import { CustomCalendar as Calendar } from "../../../../components/lib/antdComponent";
+import ArrowDown from "@/components/icon/ArrowDown";
+import {
+  CustomCalendar as Calendar,
+  CustomTable as Table,
+} from "@/components/lib/antdComponent";
 
 const page = () => {
+  const columns = [
+    {
+      title: "Start Date",
+      dataIndex: "name",
+      render: (name) => `${name.first} ${name.last}`,
+      width: "20%",
+    },
+    {
+      title: "Start Time",
+      dataIndex: "gender",
+      width: "15%",
+    },
+    {
+      title: "Break",
+      dataIndex: "email",
+      width: "10%",
+    },
+    {
+      title: "End Time",
+      dataIndex: "gender",
+      width: "15%",
+    },
+    {
+      title: "End Date",
+      dataIndex: "gender",
+      width: "20%",
+    },
+    {
+      title: "Sleep In?",
+      dataIndex: "gender",
+      width: "10%",
+    },
+    {
+      title: "Total",
+      dataIndex: "gender",
+      width: "10%",
+      fixed: "right",
+    },
+  ];
   return (
-    <WorkersLayout>
+    <>
       <nav className="w-full bg-white py-[1%] px-[2%] flex items-center justify-between">
         <h2 className="text-[#00359A] text-[32px] font-[600]">History</h2>
         <span className="flex items-center gap-[1rem]">
@@ -25,7 +67,7 @@ const page = () => {
         </span>
       </nav>
       <section className="bg-[#F8F8F8] w-[95%] mx-auto flex flex-col gap-[1rem]">
-        <div className="flex flex-col gap-[0.2rem]">
+        <div className="flex flex-col gap-[0.5rem]">
           <p className="text-[#303030] text-[16px] font-[400]">
             Select date to view your timesheet history:
           </p>
@@ -111,19 +153,26 @@ const page = () => {
                   03-09-2023
                 </p>
               </span>
-              <div className="">
+              <div className="flex flex-col gap-[0.5rem]">
                 <span className="flex items-center gap-[0.5rem]">
                   <p className="text-[#1F1F1F] text-[16px] font-[600]">
                     Time Entries
                   </p>
                   <ArrowDown />
                 </span>
+                <Table
+                  columns={columns}
+                  // rowKey={(record) => record.login.uuid}
+                  dataSource={[]}
+                  size="small"
+                  scroll={{ x: 800 }}
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
-    </WorkersLayout>
+    </>
   );
 };
 

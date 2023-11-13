@@ -1,17 +1,16 @@
-import WorkersLayout from "../../../../components/WorkersLayout";
 import Image from "next/image";
 import profile_img from "../../../../assets/profile_img.jpg";
-import Camera from "../../../../components/icon/Camera";
+import Camera from "@/components/icon/Camera";
 import {
   CustomTab as Tab,
   CustomInput as Input,
   CustomPasswordInput as PasswordInput,
   CustomButton as Button,
   TextArea,
-} from "../../../../components/lib/antdComponent";
-import Lock from "../../../../components/icon/Lock";
-import Mail from "../../../../components/icon/Mail";
-import Profile from "../../../../components/icon/Profile";
+} from "@/components/lib/antdComponent";
+import Lock from "@/components/icon/Lock";
+import Mail from "@/components/icon/Mail";
+import Profile from "@/components/icon/Profile";
 
 const page = () => {
   const items = [
@@ -143,7 +142,7 @@ const page = () => {
   ];
   return (
     <>
-      <WorkersLayout>
+      <>
         <nav className="w-full bg-white py-[1%] px-[2%] flex items-center justify-between">
           <h2 className="text-[#00359A] text-[32px] font-[600]">Settings</h2>
           <span className="flex items-center gap-[1rem]">
@@ -164,7 +163,7 @@ const page = () => {
         <section className="m-auto py-[3%]">
           <Tab items={items} tabPosition="left" />
         </section>
-      </WorkersLayout>
+      </>
     </>
   );
 };
