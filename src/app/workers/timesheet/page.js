@@ -104,59 +104,79 @@ const Page = () => {
           </span>
 
           <div className="flex flex-col gap-[0.5rem]">
-            <span className="grid grid-cols-2 md:grid-cols-7">
-              <label className="text-center text-[#303030] text-[16px] font-[400]">
-                Start Date
-              </label>
-              <label className="text-center text-[#303030] text-[16px] font-[400]">
-                Start Time
-              </label>
-              <label className="text-center text-[#303030] text-[16px] font-[400]">
-                Break
-              </label>
-              <label className="text-center text-[#303030] text-[16px] font-[400]">
-                End Time
-              </label>
-              <label className="text-center text-[#303030] text-[16px] font-[400]">
-                End Date
-              </label>
-              <label className="text-center text-[#303030] text-[16px] font-[400]">
-                Sleep In
-              </label>
-              <label className="text-center text-[#303030] text-[16px] font-[400]">
-                Total
-              </label>
-            </span>
             {entry.map((e, i) => (
-              <div key={i} className="flex items-center">
+              <div
+                key={i}
+                className="flex items-start md:items-center relative"
+              >
                 <Close
                   onClick={() => setEntry((prev) => prev.pop())}
-                  className="cursor-pointer"
+                  className="cursor-pointer absolute md:relative top-0 left-[-3%] md:left-0"
                 />
-                <span className="grid grid-cols-7 rounded-[10px] border border-[#4F4F4F]">
-                  <span className="border-r border-[#4F4F4F]">
-                    <DatePicker bordered={false} />
+                <span className="grid grid-cols-2 md:grid-cols-7 gap-1 justify-between rounded-[10px] md:border border-[#4F4F4F]">
+                  <span className="flex flex-col gap-1 items-center w-full">
+                    <label className="text-center text-[#303030] text-[16px] font-[400]">
+                      Start Date
+                    </label>
+                    <span className="md:border-r border-[#4F4F4F] w-full">
+                      <DatePicker className="!w-full !border md:!border-0 !border-[#4F4F4F]" />
+                    </span>
                   </span>
-                  <span className="border-r border-[#4F4F4F]">
-                    <TimePicker bordered={false} />
+                  <span className="flex flex-col gap-1 items-center w-full">
+                    <label className="text-center text-[#303030] text-[16px] font-[400]">
+                      Start Time
+                    </label>
+                    <span className="md:border-r border-[#4F4F4F] w-full">
+                      <TimePicker className="!border md:!border-0 !border-[#4F4F4F] w-full" />
+                    </span>
                   </span>
-                  <span className="border-r border-[#4F4F4F]">
-                    <Select className="!w-full" options={[]} bordered={false} />
+                  <span className="flex flex-col gap-1 items-center w-full">
+                    <label className="text-center text-[#303030] text-[16px] font-[400]">
+                      Break
+                    </label>
+                    <span className="md:border-r border-[#4F4F4F] w-full">
+                      <Select
+                        options={[]}
+                        className="!w-full !border md:!border-0 !border-[#4F4F4F]"
+                      />
+                    </span>
                   </span>
-                  <span className="border-r border-[#4F4F4F]">
-                    <TimePicker bordered={false} />
+                  <span className="flex flex-col gap-1 items-center w-full">
+                    <label className="text-center text-[#303030] text-[16px] font-[400]">
+                      End Time
+                    </label>
+                    <span className="md:border-r border-[#4F4F4F] w-full">
+                      <TimePicker className="!border md:!border-0 !border-[#4F4F4F] !w-full" />
+                    </span>
                   </span>
-                  <span className="border-r border-[#4F4F4F]">
-                    <DatePicker bordered={false} />
+                  <span className="flex flex-col gap-1 items-center w-full">
+                    <label className="text-center text-[#303030] text-[16px] font-[400]">
+                      End Date
+                    </label>
+                    <span className="md:border-r border-[#4F4F4F] w-full">
+                      <DatePicker className="!border md:!border-0 !border-[#4F4F4F] !w-full" />
+                    </span>
                   </span>
-                  <span className="border-r border-[#4F4F4F]">
-                    <Select className="!w-full" options={[]} bordered={false} />
+                  <span className="flex flex-col gap-1 items-center w-full">
+                    <label className="text-center text-[#303030] text-[16px] font-[400]">
+                      Sleep In
+                    </label>
+                    <span className="md:border-r border-[#4F4F4F] w-full">
+                      <Select
+                        options={[]}
+                        className="!w-full !border md:!border-0 !border-[#4F4F4F]"
+                      />
+                    </span>
                   </span>
-                  <InputNumber
-                    className="!w-full"
-                    controls={false}
-                    bordered={false}
-                  />
+                  <span className="flex flex-col gap-1 items-center w-full">
+                    <label className="text-left md:text-center text-[#303030] text-[16px] font-[400]">
+                      Total
+                    </label>
+                    <InputNumber
+                      controls={false}
+                      className="!w-full !border md:!border-0 !border-[#4F4F4F]"
+                    />
+                  </span>
                 </span>
               </div>
             ))}

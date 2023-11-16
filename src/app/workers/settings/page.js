@@ -11,6 +11,7 @@ import {
 import Lock from "@/components/icon/Lock";
 import Mail from "@/components/icon/Mail";
 import Profile from "@/components/icon/Profile";
+import Hamburger from "@/components/icon/Hamburger";
 
 const page = () => {
   const items = [
@@ -18,12 +19,12 @@ const page = () => {
       key: "1",
       label: (
         <span className="flex items-center gap-[1rem]">
-          <Lock className="fill-inherit" />
+          <Lock className="fill-inherit hidden md:block" />
           <p>Change Password</p>
         </span>
       ),
       children: (
-        <div className="px-[3%] flex flex-col gap-[2rem] p-[2%] w-[90%] h-[80vh] justify-between bg-white">
+        <div className="px-[3%] flex flex-col gap-[2rem] p-[2%] mx-auto w-[90%] h-[80vh] justify-between bg-white">
           <div className="flex flex-col gap-[0.5rem]">
             <span className="p-[0.2rem] w-fit border-b border-[#00359A]">
               <p className="text-[16px] font-[600] text-[#00359A]">
@@ -63,12 +64,12 @@ const page = () => {
       key: "2",
       label: (
         <span className="flex items-center gap-[1rem]">
-          <Mail className="fill-inherit" />
+          <Mail className="fill-inherit hidden md:block" />
           <p>Change Email Address</p>
         </span>
       ),
       children: (
-        <div className="px-[3%] flex flex-col gap-[2rem] p-[2%] w-[90%] h-[80vh] justify-between bg-white">
+        <div className="px-[3%] flex flex-col gap-[2rem] p-[2%] mx-auto w-[90%] h-[80vh] justify-between bg-white">
           <div className="flex flex-col gap-[0.5rem]">
             <span className="p-[0.2rem] w-fit border-b border-[#00359A]">
               <p className="text-[16px] font-[600] text-[#00359A]">
@@ -102,12 +103,12 @@ const page = () => {
       key: "3",
       label: (
         <span className="flex items-center gap-[1rem]">
-          <Profile className="fill-inherit" />
+          <Profile className="fill-inherit hidden md:block" />
           <p>Edit Profile</p>
         </span>
       ),
       children: (
-        <div className="px-[3%] flex flex-col gap-[2rem] p-[2%] w-[90%] h-[80vh] justify-between bg-white">
+        <div className="px-[3%] flex flex-col gap-[2rem] p-[2%] mx-auto w-[90%] h-[80vh] justify-between bg-white">
           <div className="flex flex-col gap-[1rem]">
             <span className="p-[0.2rem] w-fit border-b border-[#00359A]">
               <p className="text-[16px] font-[600] text-[#00359A]">
@@ -142,28 +143,39 @@ const page = () => {
   ];
   return (
     <>
-      <>
-        <nav className="w-full bg-white py-[1%] px-[2%] flex items-center justify-between">
+      <nav className="w-full bg-white py-[1%] px-[2%] flex items-center justify-between sticky top-0 z-10">
+        <span className="flex items-center">
+          <label
+            htmlFor="my-drawer-2"
+            className="flex lg:hidden text-blue-800 px-3"
+          >
+            <Hamburger />
+          </label>
+
           <h2 className="text-[#00359A] text-[32px] font-[600]">Settings</h2>
-          <span className="flex items-center gap-[1rem]">
-            <Image
-              src={profile_img}
-              alt=""
-              className="w-[40px] h-[40px] rounded-full"
-            />
-            <span className="flex flex-col gap-[0.1rem]">
-              <p className="text-[#1F1F1F] text-[16px] font-[600]">
-                Adelakin Adelakin
-              </p>
-              <p className="text-[#828282] text-[14px] font-[400]">User</p>
-            </span>
+        </span>
+        <span className="flex items-center gap-[1rem]">
+          <Image
+            src={"/images/profile_img.jpg"}
+            alt=""
+            width={40}
+            height={40}
+            className="w-[40px] h-[40px] rounded-full"
+          />
+          <span className="hidden md:flex flex-col gap-[0.1rem]">
+            <p className="text-[#1F1F1F] text-[16px] font-[600]">
+              Adelakin Adelakin
+            </p>
+            <p className="text-[#828282] text-[14px] font-[400]">User</p>
           </span>
-        </nav>
-        <section className=""></section>
-        <section className="m-auto py-[3%]">
-          <Tab items={items} tabPosition="left" />
-        </section>
-      </>
+        </span>
+      </nav>
+      <section className="m-auto py-[3%] hidden">
+        <Tab items={items} tabPosition="left" />
+      </section>
+      <section className="m-auto py-[3%] md:hidden">
+        <Tab items={items} tabPosition="top" size="small" />
+      </section>
     </>
   );
 };

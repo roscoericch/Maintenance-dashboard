@@ -5,6 +5,7 @@ import {
   CustomCalendar as Calendar,
   CustomTable as Table,
 } from "@/components/lib/antdComponent";
+import Hamburger from "@/components/icon/Hamburger";
 
 const page = () => {
   const columns = [
@@ -48,17 +49,26 @@ const page = () => {
   ];
   return (
     <>
-      <nav className="w-full bg-white py-[1%] px-[2%] flex items-center justify-between">
-        <h2 className="text-[#00359A] text-[32px] font-[600]">History</h2>
+      <nav className="w-full bg-white py-[1%] px-[2%] flex items-center justify-between sticky top-0 z-10">
+        <span className="flex items-center">
+          <label
+            htmlFor="my-drawer-2"
+            className="flex lg:hidden text-blue-800 px-3"
+          >
+            <Hamburger />
+          </label>
+
+          <h2 className="text-[#00359A] text-[32px] font-[600]">History</h2>
+        </span>
         <span className="flex items-center gap-[1rem]">
           <Image
             src={"/images/profile_img.jpg"}
-            alt="user"
+            alt=""
             width={40}
             height={40}
             className="w-[40px] h-[40px] rounded-full"
           />
-          <span className="flex flex-col gap-[0.1rem]">
+          <span className="hidden md:flex flex-col gap-[0.1rem]">
             <p className="text-[#1F1F1F] text-[16px] font-[600]">
               Adelakin Adelakin
             </p>
@@ -82,7 +92,7 @@ const page = () => {
             Your timesheet details for the 6th of June 2023 is shown below.
           </p>
           {/* </span> */}
-          <div className="grid grid-cols-[30%_68%] gap-[2%]">
+          <div className="grid grid-cols-1 md:grid-cols-[30%_68%] gap-[2%]">
             <div className="bg-white rounded-[5px] shadow-sm flex flex-col gap-[1rem] pb[5%] p-[3%]">
               <span className="flex flex-col items-center gap-[0.5rem] border-b border-[#E0E0E0]">
                 <Image
