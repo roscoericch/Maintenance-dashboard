@@ -1,12 +1,54 @@
+"use client";
 import AgencyLayout from "@/components/AgencyLayout";
 import Image from "next/image";
 import Hamburger from "@/components/icon/Hamburger";
+import SearchIcon from "@/components/icon/Search";
+import {
+  CustomProgress as PieChart,
+  CustomSelect as Select,
+  CustomTable as Table,
+  CustomInput as Input,
+} from "@/components/lib/antdComponent";
+import Chart from "@/components/AreaChart";
+import Link from "next/link";
 
 const Index = () => {
+  const columns = [
+    {
+      title: "Sub Admin’s Name",
+      dataIndex: "name",
+      render: (name) => `${name.first} ${name.last}`,
+      width: "20%",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+      width: "20%",
+    },
+    {
+      title: "Gender",
+      dataIndex: "gender",
+      width: "10%",
+    },
+    {
+      title: "Contact",
+      dataIndex: "contact",
+      width: "20%",
+    },
+    {
+      title: "Date Joined",
+      dataIndex: "date",
+      width: "15%",
+    },
+    {
+      render: <Link className="text-[16px] font-[400]">View Details</Link>,
+      width: "15%",
+    },
+  ];
   return (
     <>
       <AgencyLayout>
-        <nav className="flex justify-between bg-white p-8 px-6 shadow-md sticky top-0">
+        <nav className="flex justify-between bg-white p-8 px-6 shadow-md sticky top-0 z-10">
           <span className="flex gap-1 items-center">
             <label
               htmlFor="my-drawer-2"
@@ -118,42 +160,54 @@ const Index = () => {
             </div>
           </section>
 
-          <section className="flex justify-between gap-12">
-            <div className="card w-1/5 h-1/2">
-              <div className="flex flex-col items-center p-4"></div>
+          <section className="grid grid-cols-[25%_70%] justify-between gap-[5%] w-full">
+            <div className="card !p-[0.5rem] w-full">
+              <div className="flex flex-col gap-3 items-center p-[0.5rem]">
+                <h5 className="text-[#1F1F1F] text-[24px] font-[600] self-start">
+                  Pie Chart
+                </h5>
+                <PieChart percent={65} />
+                <p className="text-[#303030] text-[16px] font-[500]">Workers</p>
+                <span className="flex justify-between items-center gap-2">
+                  <span className="flex items-center gap-1">
+                    <span className="w-[7px] h-[7px] bg-[#00AEFF] rounded-full"></span>
+                    <p className="text-[#4F4F4F] text-[10px] font-[400]">
+                      Total Workers
+                    </p>
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-[7px] h-[7px] bg-[#00359A] rounded-full"></span>
+                    <p className="text-[#4F4F4F] text-[10px] font-[400]">
+                      Top Earners
+                    </p>
+                  </span>
+                </span>
+              </div>
             </div>
-            <div className="card w-4/5 h-1/2">
-              <div className="flex flex-col  p-4"></div>
+            <div className="card grid grid-cols-1">
+              <span className="flex justify-between items-center">
+                <span className="flex flex-col">
+                  <h5 className="text-[#1F1F1F] text-[24px] font-[600]">
+                    Statistics
+                  </h5>
+                  <p className="text-[#828282] text-[16px] font-[400]">
+                    The progress report for registered workers..
+                  </p>
+                </span>
+                <Select value="Annual Report" className="wfull" options={[]} />
+              </span>
+              <Chart />
             </div>
           </section>
-
-          {/* Table Section */}
           <section className="flex flex-col card">
-            <div className="">{/* table header with searchbar */}</div>
-            <div>
-              <table className="border-collapse border text-center w-full">
-                <thead>
-                  <tr>
-                    <th className="">Agencys Name</th>
-                    <th>Email Address</th>
-                    <th>Date</th>
-                    <th>Contact</th>
-                    <th>Members</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Volkswagen Group</td>
-                    <td>GodwinOgbaji@gmail.com</td>
-                    <td>18-02-2009</td>
-                    <td>+4400000232434232</td>
-                    <td>200</td>
-                    <td>View Details</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className="bg-[#00359A] rounded-t-[10px] p-[2%] w-full">
+              <Input
+                suffix={<SearchIcon />}
+                className="!w-fit"
+                placeholder="Search worker..."
+              />
             </div>
+            <Table columns={columns} dataSource={[]} />
           </section>
         </section>
       </AgencyLayout>

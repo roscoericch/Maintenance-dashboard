@@ -1,8 +1,11 @@
+"use client";
 import AdminLayout from "@/components/AdminLayout";
 import Image from "next/image";
 import Hamburger from "@/components/icon/Hamburger";
+import { useRouter } from "next/navigation";
 
 const AgencyDetails = () => {
+  const { back } = useRouter();
   return (
     <AdminLayout>
       <nav className="flex justify-between bg-white p-8 px-6 shadow-md sticky top-0 z-10">
@@ -13,7 +16,9 @@ const AgencyDetails = () => {
           >
             <Hamburger />
           </label>
-          <h1 className="text-[#00359A]">Back</h1>
+          <span onClick={back} className="text-[#00359A] cursor-pointer">
+            Back
+          </span>
         </span>
       </nav>
 
@@ -29,8 +34,8 @@ const AgencyDetails = () => {
           </div>
         </section>
 
-        <section className="flex justify-between gap-12">
-          <div className="card w-2/5">
+        <section className="flex flex-col md:flex-row justify-between gap-12">
+          <div className="card w-full md:w-2/5">
             <div className="flex flex-col items-center p-4">
               <Image
                 src="/images/Mask Group.png"
@@ -61,7 +66,7 @@ const AgencyDetails = () => {
               </button>
             </div>
           </div>
-          <div className="card w-3/5">
+          <div className="card w-full md:w-3/5">
             <div className="flex flex-col  p-4">
               <h2 className="text-[#00359A] font-bold mt-4">
                 Agency Information

@@ -11,6 +11,7 @@ import {
 } from "@/components/lib/antdComponent";
 import Chart from "@/components/AreaChart";
 import Link from "next/link";
+import FolderIcon from "@/components/icon/FolderIcon";
 
 const options = [
   { label: "Annual report", value: "Annual report" },
@@ -21,7 +22,7 @@ const options = [
 const Index = () => {
   const columns = [
     {
-      title: "Agency’s Name",
+      title: "Sub Admin’s Name",
       dataIndex: "name",
       render: (name) => `${name.first} ${name.last}`,
       width: "20%",
@@ -55,7 +56,7 @@ const Index = () => {
   return (
     <>
       <AdminLayout>
-        <nav className="flex justify-between bg-white p-8 px-6 shadow-md sticky top-0 z-10">
+        <nav className="flex justify-between bg-white p-2 px-6 shadow-md sticky top-0 z-10">
           <span className="flex gap-1 items-center">
             <label
               htmlFor="my-drawer-2"
@@ -63,7 +64,7 @@ const Index = () => {
             >
               <Hamburger />
             </label>
-            <h1 className="text-[#00359A] text-3xl font-bold">Agencies</h1>
+            <h1 className="text-[#00359A] text-3xl font-bold">Sub Admin</h1>
           </span>
           <span className="flex items-center gap-[1rem]">
             <Image
@@ -83,16 +84,22 @@ const Index = () => {
             </span>
           </span>
         </nav>
-        <section className="flex flex-col space-y-6 py-6 px-6">
-          <section className="flex justify-between space-x-4 border-b border-grey p-2">
-            <div className="flex flex-col space-y-2">
+        <section className="flex flex-col space-y-6 py-2 px-6">
+          <section className="flex flex-col md:flex-row justify-between space-x-4 border-b border-grey p-2">
+            <div className="flex flex-col">
               <h1 className="text-[#1F1F1F] text-2xl font-bold">
                 Good Morning, Iyanu
               </h1>
-              <p className="text-[#828282] text-lg  ">
+              <p className="text-[#828282] text-lg">
                 Just one small positive thought in the morning can change your
                 whole day
               </p>
+            </div>
+            <div className="flex flexcol items-center justify-center md:mx-0">
+              <FolderIcon />
+              <h4 className="text-[#002C81] font-bold mt-1 text-lg">
+                Add Sub Admin
+              </h4>
             </div>
           </section>
           {/* Card Section */}
@@ -103,7 +110,9 @@ const Index = () => {
                   Pie Chart
                 </h5>
                 <PieChart percent={65} />
-                <p className="text-[#303030] text-[16px] font-[500]">Workers</p>
+                <p className="text-[#303030] text-[16px] font-[500]">
+                  Sub Admin
+                </p>
                 <span className="flex justify-between items-center gap-2">
                   <span className="flex items-center gap-1">
                     <span className="w-[7px] h-[7px] bg-[#00AEFF] rounded-full"></span>

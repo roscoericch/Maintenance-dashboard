@@ -11,6 +11,7 @@ import {
   InputNumber,
   Calendar,
   Table,
+  Progress,
 } from "antd";
 // import { Poppins } from "next/font/google";
 
@@ -99,5 +100,29 @@ export const CustomCalendar = ({ ...props }) => (
 export const CustomTable = ({ ...props }) => (
   <ConfigProvider theme={{ token: { ...primaryConfig } }}>
     <Table {...props} />
+  </ConfigProvider>
+);
+
+// export const ThemeTable = ({ ...props }) => (
+//   <ConfigProvider
+//     theme={{
+//       token: { ...primaryConfig },
+//       components: { Table: { headerBg: "#00359A" } },
+//     }}
+//   >
+//     <Table {...props} />
+//   </ConfigProvider>
+// );
+
+export const CustomProgress = ({ ...props }) => (
+  <ConfigProvider theme={{ token: { ...primaryConfig } }}>
+    <Progress
+      trailColor="#00AEFF"
+      strokeColor="#00359A"
+      type="circle"
+      strokeWidth={20}
+      strokeLinecap="square"
+      {...props}
+    />
   </ConfigProvider>
 );
